@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./src/css/style.css" />
+  <link rel="shortcut icon" href="./src/img/favicon/favicon.png" type="image/x-icon" />
+  <title>Dt Money</title>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo-botao">
+        <img src="./src/img/favicon/Logo.png" alt="Logo Dt Money" />
+        <button id="botao">Nova transação</button>
+      </div>
+
+      <!-- Modal de Nova Transação: Aqui só vai abrir ao clica lá no botão nova transação -->
+      <div class="modal-overlay" id="modal">
+        <div class="modal">
+          <h2>Nova transação</h2>
+          <form id="form-transacao">
+            <div class="inputs">
+              <input type="text" placeholder="Descrição" id="descricao" required />
+              <input type="number" placeholder="Preço" id="preco" required />
+              <input type="text" placeholder="Categoria" id="categoria" required />
+            </div>
+
+            <div class="tipo-transacao">
+              <button type="button" class="tipo " data-tipo="entrada">
+                <img src="./src/img/Icons.png" alt="Entrada" /> Entrada
+              </button>
+
+              <button type="button" class="tipo saida" data-tipo="saida">
+                <img src="./src/img/Icons1.png" alt="Saída" /> Saída
+              </button>
+            </div>
+
+            <button type="submit" class="cadastrar">Cadastrar</button>
+          </form>
+        </div>
+      </div>
+      <!-- Fim Modal -->
+
+    </nav>
+
+  </header>
+
+  <main>
+    <section class="resumo">
+      <div class="card entrada">
+        <header>
+          <p>Entradas</p>
+          <img src="./src/img/Icons.png" alt="Ícone entrada" />
+        </header>
+        <strong>R$ 17.400,00</strong>
+      </div>
+
+      <div class="card saida">
+        <header>
+          <p>Saídas</p>
+          <img src="./src/img/Icons1.png" alt="Ícone saída" />
+        </header>
+        <strong>R$ 1.259,00</strong>
+      </div>
+
+      <div class="card total">
+        <header>
+          <p>Total</p>
+          <img src="./src/img/Icons2.png" alt="Ícone total" />
+        </header>
+        <strong>R$ 16.141,00</strong>
+      </div>
+    </section>
+
+    <section class="transacoes">
+      <div class="busca">
+        <input type="text" id="pesquisa" placeholder="Busque uma transação" />
+        <button id="buscar">Buscar</button>
+      </div>
+
+<!-- Tabela de transações -->
+      <table>
+        <thead>
+          <tr>
+            <th>Descrição</th>
+            <th>Valor</th>
+            <th>Categoria</th>
+            <th>Data</th>
+          </tr>
+
+        </thead>
+        <tbody id="tabela-corpo">
+          <!-- Transações via JS -->
+            <td></td>
+        </tbody>
+      </table>
+    </section>
+
+    <section>
+        <div class="abas">
+        <!-- Botão de voltar -->
+        <button class="seta" id="anterior">&lt;</button>
+        
+        <button class="pagina ativa">1</button>
+        <button class="pagina">2</button>
+        <button class="pagina">3</button>
+
+        <!-- Botão de avançar -->
+        <button class="seta" id="proximo">&gt;</button>
+
+        </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      Dt Money &copy;
+      <script>document.write(new Date().getFullYear());</script>
+      Desenvolvido por
+      <a href="https://github.com/robertdouglasaimon" target="_blank">Robert Douglas</a>
+    </p>
+  </footer>
+
+</body>
+<script src="./src/js/script.js" defer></script>
+</html>

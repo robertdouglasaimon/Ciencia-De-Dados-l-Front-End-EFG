@@ -1,0 +1,379 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: R;
+  src: url(../fonts/Roboto-Regular.ttf);
+}
+
+:root {
+  --Roboto: 'Roboto', sans-serif;
+  --branco: #fff;
+  --verde-musgo: #00875F;
+  --cinza-escuro: #1a1a1a;
+  --vermelho: #E52E4D;
+  --preto: #000;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--preto);
+  color: var(--branco);
+  font-family: var(--Roboto);
+}
+
+/*-----------------------------------------------------------------------------------------------*/
+/* HEADER */
+.logo-botao {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 40px 160px;
+}
+
+#botao {
+  width: 152px;
+  height: 50px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 16px;
+  background-color: var(--verde-musgo);
+  color: var(--branco);
+  border: none;
+  cursor: pointer;
+}
+
+#botao:hover {
+  background-color: #016e4e;
+}
+
+/* RESUMO */
+.resumo {
+  display: flex;
+  gap: 32px;
+  margin: 40px 160px;
+}
+
+.card {
+  width: 352px;
+  height: 137px;
+  padding: 24px;
+  border-radius: 6px;
+  background-color: var(--cinza-escuro);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card.total {
+  background-color: var(--verde-musgo);
+}
+
+
+/*-------------------------------------------------------------------------------------------------*/
+/* BUSCA E TABELA */
+.transacoes {
+  margin: 40px 160px;
+}
+
+.busca {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.busca input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  font-size: 16px;
+}
+
+.busca button {
+  padding: 10px 20px;
+  background-color: var(--verde-musgo);
+  color: var(--branco);
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.busca button:hover {
+  background-color: #016e4e;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background-color: var(--cinza-escuro);
+}
+
+th, td {
+  padding: 16px;
+  text-align: left;
+  border-bottom: 1px solid #333;
+}
+
+tbody tr:hover {
+  background-color: #111;
+}
+
+footer {
+  margin: 0 0 2rem 0 !important;
+  text-align: center;
+  padding-top: 10px;
+}
+
+/*-------------------------------------------------------------------------------------------------*/
+/* Botões de navegação */
+.abas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 40px 0;
+}
+
+.pagina, .seta {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #1a1a1a;
+  color: var(--branco);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.pagina:hover, .seta:hover {
+  background-color: #333;
+}
+
+.pagina.ativa {
+  background-color: var(--verde-musgo);
+}
+
+/*--------MODAL DE NOVA TRANSACAO-----------------------------*/
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.modal {
+  background-color: var(--cinza-escuro);
+  padding: 2rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modal h2 {
+  text-align: left;
+  font-size: 24px;
+  margin-bottom: 1rem;
+}
+
+.modal input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  font-size: 16px;
+  background-color: #333;
+  color: var(--branco);
+  margin-bottom: 1rem;
+}
+
+
+.tipo-transacao {
+  display: flex;
+  gap: 1rem;
+}
+
+.tipo {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #333;
+  color: var(--branco);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.tipo img {
+  width: 20px;
+}
+
+.tipo.ativo {
+  background-color: var(--verde-musgo);
+}
+
+.cadastrar {
+  width: 100%;
+  margin-top: 1rem;
+  padding: 15px 24px;
+  background-color: var(--verde-musgo);
+  color: var(--branco);
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background-color 0.3s;
+
+}
+
+.cadastrar:hover {
+  background-color: #016e4e;
+}
+
+.entrada {
+  background-color: var(--cinza-escuro);
+}
+
+.modal > .entrada, .saida:hover {
+  background-color: #016e4e;
+}
+
+.entrada:hover {
+  background-color: #016e4e;
+}
+
+
+/* Responsivo / Mobile------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  .modal {
+    padding: 1rem;
+    gap: 0.8rem;
+  }
+
+  .modal h2 {
+    font-size: 20px;
+  }
+
+  .tipo {
+    font-size: 14px;
+    padding: 0.6rem;
+  }
+
+  .cadastrar {
+    font-size: 14px;
+    padding: 0.6rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 0 1rem;
+  }
+
+  .logo-botao {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  .resumo {
+    flex-direction: column;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .transacoes {
+    margin: 2rem 0;
+  }
+
+  .busca {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .busca input,
+  .busca button {
+    width: 100%;
+  }
+
+  table th,
+  table td {
+    font-size: 14px;
+    padding: 12px;
+  }
+
+  .abas {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .pagina,
+  .seta {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+
+  footer {
+    font-size: 14px;
+    padding: 1rem 0;
+  }
+
+  /* Modal ajustes */
+  .modal {
+    padding: 1rem;
+    gap: 0.8rem;
+  }
+
+  .modal h2 {
+    font-size: 20px;
+  }
+
+  .modal input {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .tipo {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .cadastrar {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+

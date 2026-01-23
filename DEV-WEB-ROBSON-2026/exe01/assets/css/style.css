@@ -1,0 +1,154 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+
+/* * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Times New Roman', Times, serif;
+} */
+
+
+body {
+  margin: 0;
+  font-family:  "Outfit", sans-serif;
+}
+
+aside {
+    margin-bottom: 3rem;
+}
+
+
+.cabecalho {
+  position: relative;
+  height: 250px;
+  background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.fundo-imagem {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.titulo-site {
+  font-size: 2em;
+  margin: 0;
+  text-align: center;
+}
+
+.menu {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+}
+
+.menu ul {
+  display: flex;
+  gap: 15px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.menu a:hover {
+  color: #004080;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+
+.menu ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  margin: 0 15px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+}
+
+.conteudo-principal {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+
+.modelo-imagem {
+  max-width: 100%;
+  width: 300px; /* ou ajuste conforme necessário */
+  height: auto;
+  display: block;
+  margin-top: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.modelo-imagem:hover {
+  transform: scale(1.05);
+}
+
+
+.secao {
+  flex: 2;
+  padding: 20px;
+}
+
+.lateral {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+.anuncio {
+  background-color: #d9edf7;
+  padding: 10px;
+  border: 1px solid #bce8f1;
+}
+
+.rodape {
+  background-color: #004080;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  
+  /* Colocando o rodapé no final da página fixo (Para parar de encher o meu saco =D KKKK' */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.rodape p {
+    margin: auto 0;
+}

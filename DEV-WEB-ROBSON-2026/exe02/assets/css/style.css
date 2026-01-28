@@ -68,14 +68,15 @@ h1 {
 }
 
 .rodape {
-    margin-top: 40px;
-    font-size: 14px;
-    color: #999;
-
-    /*Colocando no fim da página*/
+    /*Colocando no final da pagina o rodapé*/
     position: fixed;
     bottom: 10px;
     width: 100%;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 14px;
+    color: #999;
+
 }
 
 .rodape a {

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercicio 02 - Lista de Compras</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+
+  <h1>Lista de Compras</h1>
+
+  <ul id="lista-compras">
+    <li>Arroz</li>
+    <li>Feijão</li>
+    <li>Leite</li>
+  </ul>
+
+  <input type="text" id="entrada-novo-item" placeholder="Novo item">
+  <button id="botao-adicionar">Adicionar Item</button>
+
+  <div id="espaco-gif">
+    <div class="tenor-gif-embed  gif" data-postid="14682293" data-share-method="host" data-aspect-ratio="0.990625" data-width="100%"><a href="https://tenor.com/view/anime-shopping-gif-14682293">Anime Shopping GIF</a>from <a href="https://tenor.com/search/anime-gifs">Anime GIFs</a></div> <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const lista = document.getElementById("lista-compras");
+      const entrada = document.getElementById("entrada-novo-item");
+      const botao = document.getElementById("botao-adicionar");
+
+      botao.addEventListener("click", function () {
+        const texto = entrada.value.trim();
+        if (texto !== "") {
+          const novoItem = document.createElement("li");
+          novoItem.textContent = texto;
+          lista.appendChild(novoItem);
+          entrada.value = "";
+        }
+      });
+    });
+  </script>
+
+  <footer class="rodape">
+    <p>Desenvolvido por <a href="https://github.com/robertdouglasaimon" target="_blank">Robert Douglas</a> - Front-End EFG</p>
+    <script>document.write(new Date().getFullYear());</script>
+  </footer>
+
+</body>
+</html>

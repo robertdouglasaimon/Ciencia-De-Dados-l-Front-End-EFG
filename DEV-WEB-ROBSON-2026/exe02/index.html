@@ -31,15 +31,33 @@
 
       botao.addEventListener("click", function () {
         const texto = entrada.value.trim();
+
         if (texto !== "") {
           const novoItem = document.createElement("li");
-          novoItem.textContent = texto;
+
+          const checkbox = document.createElement("input");
+          checkbox.type = "checkbox";
+
+          checkbox.addEventListener("change", function () {
+            if (checkbox.checked) {
+              novoItem.style.textDecoration = "line-through";
+              novoItem.style.opacity = "0.6";
+              novoItem.style.color = "green";
+            } else {
+              novoItem.style.textDecoration = "none";
+              novoItem.style.opacity = "1";
+            }
+          });
+
+          novoItem.appendChild(checkbox);
+          novoItem.appendChild(document.createTextNode(" " + texto)); // Espaço entre o checkbox e o texto. Anotando aqui porque toda vez eu esqueço de fazer essa bagaça! KKKK'
           lista.appendChild(novoItem);
           entrada.value = "";
         }
       });
     });
   </script>
+
 
   <footer class="rodape">
     <p>Desenvolvido por <a href="https://github.com/robertdouglasaimon" target="_blank">Robert Douglas</a> - Front-End EFG</p>

@@ -1,0 +1,431 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sue+Ellen+Francisco&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+@font-face {
+    font-family: "Transformers Movie";
+    src: url("/assets/font/Transformers/TransformersMovie.ttf");
+}
+
+
+/* Pra não ficar caçando RGB, font e afins igual doido kkkk*/
+:root {
+    --branco: #fff;
+    --preto: #000;
+    --cor-principal: #74ebd5;
+    --cor-secundaria: #ACB6E5;
+
+    --Cormorant: 'Cormorant Garamond', serif;
+    --Bungee-Spice: 'Bungee Spice', cursive;
+    --Sue: 'Sue Ellen Francisco', cursive;
+    --Dancing: 'Dancing Script', cursive;
+    --Transformers: 'Transformers Movie';
+}
+
+/* Reset de leve do CSS para os elementos ficarem zerados */
+* {
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, var(--cor-principal), var(--cor-secundaria));
+  color: var(--preto);
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+    font-family: var(--Transformers);
+    font-size: 50px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+  font-family: var(--Bungee-Spice);
+  font-size: 30px;
+  color: var(--preto);
+}
+
+.linha {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 15px;
+    border: 2px solid var(--branco);
+    width: 100%;
+
+}
+
+.exercicio p {
+    font-size: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.exercicio {
+  background: var(--branco);
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Referente ao exercicio 1 --------------------------------------------------------*/
+.exercicio1 {
+    margin-bottom: 5rem;
+}
+
+.exercicio1 label {
+    display: block;
+    margin: 5px 0 5px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.exercicio1 input {
+    padding: 10px;
+    border-radius: 5px;
+    opacity: 50%;
+}
+
+.exercicio1 button {
+    padding: 10px 20px;
+    margin-left: 0.5rem;
+    background-color: var(--cor-principal);
+    color: var(--preto);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.exercicio1 button:hover {
+    background-color: var(--cor-secundaria);
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+#resultado {
+    margin-top: 1rem;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/*---------------------------------------------------------------------------------*/
+
+
+/* Referente ao exercicio 2 --------------------------------------------------------*/
+.exercicio2 {
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+}
+
+.exercicio2 label {
+    display: block;
+    margin: 5px 0 5px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.exercicio2 input {
+    padding: 10px;
+    border-radius: 5px;
+    opacity: 50%;
+}
+
+.exercicio2 button {
+    padding: 10px 20px;
+    margin-left: 0.5rem;
+    background-color: var(--cor-principal);
+    color: var(--preto);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.exercicio2 button:hover {
+    background-color: var(--cor-secundaria);
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+/*---------------------------------------------------------------------------------*/
+
+
+/* Referente ao exercicio 3 --------------------------------------------------------*/
+.exercicio3 {
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+}
+
+.lista-exercicio3 {
+    margin-left: 4rem;
+    margin-bottom: 3rem;
+    font-size: 20px;
+}
+
+.exercicio3 label {
+    display: block;
+    margin: 5px 0 5px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.exercicio3 input {
+    padding: 10px;
+    border-radius: 5px;
+    opacity: 50%;
+}
+
+.exercicio3 button {
+    padding: 10px 20px;
+    margin-left: 0.5rem;
+    background-color: var(--cor-principal);
+    color: var(--preto);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.exercicio3 button:hover {
+    background-color: var(--cor-secundaria);
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+/*---------------------------------------------------------------------------------*/
+
+/* Referente ao exercicio 4 --------------------------------------------------------*/
+.exercicio4 {
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+}
+
+.exercicio4 label {
+    display: block;
+    margin: 5px 0 5px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.exercicio4 input {
+    padding: 10px;
+    border-radius: 5px;
+    opacity: 50%;
+}
+
+.exercicio4 button {
+    padding: 10px 20px;
+    margin-left: 0.5rem;
+    background-color: var(--cor-principal);
+    color: var(--preto);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.exercicio4 button:hover {
+    background-color: var(--cor-secundaria);
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+
+/*---------------------------------------------------------------------------------*/
+
+/* Referente ao exercicio 5 --------------------------------------------------------*/
+.exercicio5 {
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+}
+
+.lista-exercicio5 {
+    margin-left: 4rem;
+    margin-bottom: 3rem;
+    font-size: 20px;
+}
+
+.exercicio5 label {
+    display: block;
+    margin: 5px 0 5px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.exercicio5 input {
+    padding: 10px;
+    border-radius: 5px;
+    opacity: 50%;
+}
+
+.exercicio5 button {
+    padding: 10px 20px;
+    margin-left: 0.5rem;
+    background-color: var(--cor-principal);
+    color: var(--preto);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.exercicio5 button:hover {
+    background-color: var(--cor-secundaria);
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+/*---------------------------------------------------------------------------------*/
+
+/* Referente ao exercicio 6 --------------------------------------------------------*/
+.exercicio6 {
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+}
+
+.lista-exercicio6 {
+    margin-left: 4rem;
+    margin-bottom: 3rem;
+    font-size: 20px;
+}
+
+.para-frente {
+    margin-left: 5rem;
+    margin-top: 5px;
+}
+
+.exercicio6 label {
+    display: block;
+    margin: 5px 0 5px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.exercicio6 input {
+    padding: 10px;
+    border-radius: 5px;
+    opacity: 50%;
+}
+
+.exercicio6 button {
+    padding: 10px 20px;
+    margin-left: 0.5rem;
+    background-color: var(--cor-principal);
+    color: var(--preto);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.exercicio6 button:hover {
+    background-color: var(--cor-secundaria);
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+/*---------------------------------------------------------------------------------*/
+
+
+/* Referente ao exercicio 7 --------------------------------------------------------*/
+.exercicio7 {
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+}
+
+.lista-exercicio7 {
+    margin-left: 4rem;
+    margin-bottom: 3rem;
+    font-size: 20px;
+}
+
+.exercicio7 label {
+    display: block;
+    margin: 5px 0 5px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.exercicio7 input {
+    padding: 10px;
+    border-radius: 5px;
+    opacity: 50%;
+}
+
+.exercicio7 button {
+    padding: 10px 20px;
+    margin-left: 0.5rem;
+    background-color: var(--cor-principal);
+    color: var(--preto);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.exercicio7 button:hover {
+    background-color: var(--cor-secundaria);
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+/*---------------------------------------------------------------------------------*/
+
+
+/* Referente ao exercicio 8 --------------------------------------------------------*/
+.exercicio8 {
+    margin-top: 2rem;
+    margin-bottom: 5rem;
+}
+
+.lista-exercicio8 {
+    margin-left: 4rem;
+    margin-bottom: 3rem;
+    font-size: 20px;
+}
+
+
+.exercicio8 label {
+    display: block;
+    margin: 5px 0 5px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.exercicio8 input {
+    padding: 10px;
+    border-radius: 5px;
+    opacity: 50%;
+}
+
+.exercicio8 button {
+    padding: 10px 20px;
+    margin-left: 0.5rem;
+    background-color: var(--cor-principal);
+    color: var(--preto);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.exercicio8 button:hover {
+    background-color: var(--cor-secundaria);
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+/*---------------------------------------------------------------------------------*/

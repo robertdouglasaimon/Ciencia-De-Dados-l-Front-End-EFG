@@ -216,6 +216,82 @@
             <p id="resultado8"></p>
         </section>
 
+        <hr>
+
+        <section class="exercicio9">
+            <h2>Exercício 9</h2>
+            <p>
+                A Companhia de Pulverização Faz Tudo Ltda utiliza aviões para pulverizar lavouras. Os custos de pulverização dependem do tipo de praga e da área contratada conforme o esquema:
+                <ul type="disc" class="lista-exercicio9">
+                    <li>Tipo 1: ervas daninhas → R$ 5,00 por acre</li>
+                    <li>Tipo 2: gafanhotos → R$ 10,00 por acre</li>
+                    <li>Tipo 3: broca → R$ 15,00 por acre</li>
+                    <li>Tipo 4: tudo acima → R$ 25,00 por acre</li>
+                </ul>
+                
+                <br>
+
+                <span class="titulo-li9">Regras de desconto:</span>
+                 <ul type="disc" class="lista-exercicio9">
+                    <li>Se a área for maior que 300 acres → desconto de 5% sobre o valor total.</li>
+                    <li>Se o custo total (sem desconto) ultrapassar R$ 1.750,00 → desconto de 10% sobre o valor que ultrapassar R$ 1.750,00.</li>
+                    <li>Se ambos os descontos se aplicam, o desconto da área é calculado primeiro.</li>
+                </ul>
+                
+                <br>
+
+                <span class="titulo-li9">O algoritmo deve ler:</span>
+                 <ul type="disc" class="lista-exercicio9">
+                    <li>Nome do fazendeiro,</li>
+                    <li>Tipo de pulverização (1 a 4),</li>
+                    <li>Área a ser pulverizada.</li>
+                </ul>
+
+                <span class="titulo-li9">E calcular o custo final da pulverização, mostrando o nome do fazendeiro e o valor a ser pago.</span>
+            </p>
+
+            <label>Nome do fazendeiro: </label>
+            <input type="text" id="nome9"><br><br>
+
+            <label>Tipo de pulverização (1 a 4): </label>
+            <input type="number" id="tipoPulv" min="1" max="4"><br><br>
+
+            <label>Área (acres): </label>
+            <input type="number" id="area"><br><br>
+
+            <button id="calcular9">Calcular custo</button>
+            <p id="resultado9"></p>
+        </section>
+
+        <hr>
+
+        <section class="exercicio10">
+            <h2>Exercício 10</h2>
+            <p>
+                Uma distribuidora de combustíveis irá aumentar o combustível em função da quantidade comprada anualmente por seus clientes.
+
+                <ul type="disc" class="lista-exercicio10">
+                    <strong>
+                        <li>Os postos que consomem em média até 50.000 litros/mês terão aumento de 20%.</li>
+                        <li>Os postos que consomem acima desta média terão aumento de 12%.</li>
+                    </strong>
+                </ul>
+            </p>
+            <p>
+                A distribuidora irá fornecer o nome do posto e seu consumo anual.
+                Calcule e escreva qual será o preço do litro de combustível para o posto, considerando-se que hoje a distribuidora cobra R$ 2,13 por litro.
+            </p>
+
+            <label>Nome do posto: </label>
+            <input type="text" id="nome10"><br><br>
+
+            <label>Consumo anual (litros): </label>
+            <input type="number" id="consumoAnual"><br><br>
+
+            <button id="calcular10">Calcular preço</button>
+            <p id="resultado10"></p>
+        </section>
+
 
     </div>
 </body>
@@ -227,4 +303,6 @@
     <script src="assets/js/exercicio6.js"></script>
     <script src="assets/js/exercicio7.js"></script>
     <script src="assets/js/exercicio8.js"></script>
+    <script src="assets/js/exercicio9.js"></script>
+    <script src="assets/js/exercicio10.js"></script>
 </html>

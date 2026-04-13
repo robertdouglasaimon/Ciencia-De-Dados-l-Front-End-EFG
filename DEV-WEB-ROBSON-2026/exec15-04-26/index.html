@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/favicon/jsicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <title>Lista de Exercícios - 15/04/2026</title>
+</head>
+<body>
+    <h1>LISTA DE EXERCÍCIOS - 15/04/2023 <br> ROBERT DOUGLAS (TURMA 1: DEV-WEB-MOBILE)</h1>
+    <hr class="linha">
+
+    <div class="exercicio">
+        <section class="exercicio1">
+            <h2>Exercício 1</h2>
+            <p>
+                Faça um programa que receba como entrada o <strong>nome</strong> e o <strong>salário</strong> de um funcionário e que calcule o novo valor do salário do funcionário, levando em conta que esse teve um <strong>aumento de 25%</strong>.
+            </p>
+
+            <label>Nome: </label>
+            <input type="text" name="nome" id="nome" placeholder="Insira aqui um nome">
+            <label>Salário: </label>
+            <input type="number" name="salario" id="salario" placeholder="Insira aqui o salário">
+
+            <button id="calcular">Calcular</button>
+            <p id="resultado1"></p>
+        </section>
+
+        <hr>
+
+        <section class="exercicio2">
+            <h2>Exercício 2</h2>
+            <p>
+                Faça um programa que leia o <strong>tempo de duração de um evento</strong> em uma fábrica expresso em <strong>segundos</strong> e mostre-o expresso em <strong>horas, minutos e segundos</strong>.
+            </p>
+
+            <label>Tempo em segundos: </label>
+            <input type="number" name="numero" id="segundos" placeholder="Insira os segundos">
+            <button type="button" id="converter">Converter</button>
+            <p id="resultado2"></p>
+
+        </section>
+
+        <hr>
+
+        <section class="exercicio3">
+            <h2>Exercício 3</h2>
+            <p>
+                Faça um programa que <strong>receba o número de horas trabalhadas</strong> e o <strong>valor do salário mínimo</strong>. Calcule e mostre o <strong>salário a receber</strong> seguindo as regras abaixo:
+                    <ul type="disc" class="lista-exercicio3">
+                        <li>a) A hora trabalhada vale a metade do salário mínimo;</li>
+                        <li>b) O salário bruto equivale ao número de horas trabalhadas multiplicado pelo valor da hora trabalhada;</li>
+                        <li>c) O imposto equivale a 3% do salário bruto;</li>
+                        <li>d) O salário a receber equivale ao salário bruto menos o imposto.</li>
+                    </ul>
+            </p>
+
+            <label>Horas trabalhadas: </label>
+            <input type="number" name="horas" id="horas" placeholder="Insira aqui as horas trabalhadas">
+            <label>Valor do salário: </label>
+            <input type="number" name="salario" id="salario-minimo" placeholder="Insira aqui o salário">
+            <button type="button" id="calcular3">Calcular</button>
+            <p id="resultado3"></p>
+        </section>
+
+        <hr>
+
+        <section class="exercicio4">
+            <h2>Exercício 4</h2>
+            <p>
+                Um trabalhador recebeu seu salário e depositou em sua conta bancária. Esse trabalhador emitiu dois cheques e agora deseja saber seu saldo atual.
+                Sabe-se que<strong> cada operação bancária de retirada paga CPMF de 0,38%</strong> e o <strong>saldo inicial da conta estava zerado</strong>. Faça um programa que <strong>calcule o saldo atual</strong> deste trabalhador.
+            </p>
+
+            <label>Salário: </label>
+            <input type="number" name="salario" id="salario4" placeholder="Insira aqui o salário">
+            <button type="button" id="calcular4">Calcular</button>
+            <p id="resultado4"></p>
+        </section>
+
+        <hr>
+
+        <section class="exercicio5">
+            <h2>Exercício 5</h2>
+            <p>
+                Em uma padaria, o padeiro deseja saber qual o custo de fabricação do pão francês para <strong>calcular por quanto terá que vender o pão, tendo um lucro de 30%</strong>. Sabendo-se que a receita do pão leva <strong>farinha, água e fermento</strong>, faça um programa que leia:
+            </p>
+                <ul type="disc" class="lista-exercicio5">
+                    <li>a quantidade de quilos de farinha, o valor do quilo de farinha,</li>
+                    <li>a quantidade de litros de água, o valor do litro de água,</li>
+                    <li>a quantidade de quilowatt hora de energia, o valor do quilowatt hora,</li>
+                    <li>e o percentual do imposto que o padeiro paga pelo pão.</li>
+                </ul>
+
+
+                <label>Qtd. de farinha (kg): </label>
+                <input type="number" id="qtdFarinha">
+
+                <label>Preço do kg de farinha: </label>
+                <input type="number" id="precoFarinha">
+
+                <label>Qtd. de água (litros): </label>
+                <input type="number" id="qtdAgua">
+
+                <label>Preço do litro de água: </label>
+                <input type="number" id="precoAgua">
+
+                <label>Qtd. de energia (kWh): </label>
+                <input type="number" id="qtdEnergia">
+
+                <label>Preço do kWh: </label>
+                <input type="number" id="precoEnergia">
+
+                <label>Percentual de imposto (%): </label>
+                <input type="number" id="imposto">
+
+
+                <button id="calcular5">Calcular</button>
+                <p id="resultado5"></p>
+        </section>
+
+        <hr>
+
+        <section class="exercicio6">
+            <h2>Exercício 6</h2>
+            <p>
+                Uma locadora aluga seus carros com uma <strong>taxa fixa por dia</strong>, <strong>uma taxa por km rodado</strong> e <strong>desconto de 10% na taxa fixa de aluguel por dia</strong>.
+            </p>
+                <ul type="none" class="lista-exercicio6">
+                    <li>Faça um programa que leia:</li>
+                    <div class="para-frente">
+                        <li>a taxa fixa por dia,</li>
+                        <li>a taxa por km rodado,</li>
+                        <li>o número de dias,</li>
+                        <li>e o número de quilômetros rodados.</li>
+                    </div>
+                </ul>
+
+
+                <label>Taxa fixa por dia: </label>
+                <input type="number" id="taxaFixa">
+
+                <label>Taxa por km rodado: </label>
+                <input type="number" id="taxaKm">
+
+                <label>Número de dias: </label>
+                <input type="number" id="dias">
+
+                <label>Número de quilometros: </label>
+                <input type="number" id="quilometros">
+
+                <button id="calcular6">Calcular</button>
+                <p id="resultado6"></p>
+        </section>
+
+        <hr>
+
+        <section class="exercicio7">
+            <h2>Exercício 7</h2>
+            <p>
+                Dona Joaninha é muito esquecida e sempre paga suas contas depois da data do vencimento.
+                Ela gostaria de ter um programa que lhe poupasse do trabalho de <strong>calcular o valor da multa e dos juros quando fosse pagar uma conta</strong>.
+            </p>
+            <ul type="none" class="lista-exercicio7">
+                Faça um programa que recebe:
+
+                <div class="para-frente">
+                    <li>o valor da conta,</li>
+                    <li>o número de dias em atraso,</li>
+                    <li>o valor da multa fixa,</li>
+                    <li>e o valor dos juros por dia de atraso.</li>
+                </div>
+            </ul>
+
+            <label>Valor da conta: </label>
+            <input type="number" name="conta" id="conta" placeholder="Insira aqui o valor da conta">
+
+            <label>Número de dias em atraso: </label>
+            <input type="number" name="dias" id="dias2" placeholder="Insira aqui o número de dias em atraso">
+
+            <label>Valor da multa fixa: </label>
+            <input type="number" name="multa" id="multa" placeholder="Insira aqui o valor da multa fixa">
+
+            <label>Valor dos juros por dia de atraso: </label>
+            <input type="number" name="juros" id="juros" placeholder="Insira aqui o valor dos juros por dia de atraso">
+
+            <button type="button" id="calcular7">Calcular</button>
+            <p id="resultado7"></p>
+        </section>
+
+        <hr>
+
+        <section class="exercicio8">
+            <h2>Exercício 8</h2>
+            <p>
+                Criar um programa que leia o nome, a conta e o saldo bancário total do semestre de uma pessoa e que calcule a tarifa bancária em que o mesmo se enquadra:
+            </p>
+            <ul type="disc" class="lista-exercicio8">
+                <li>Básica (saldo médio mensal inferior a R$ 1.000,00) → tarifa de R$ 25,00</li>
+                <li>Prata (saldo médio mensal entre R$ 1.000,01 e R$ 2.000,00) → tarifa de R$ 20,00</li>
+                <li>Ouro (saldo médio mensal entre R$ 2.000,01 e R$ 3.500,00) → tarifa de R$ 13,00</li>
+                <li>Prêmio (saldo médio mensal superior a R$ 3.500,00) → tarifa isenta</li>
+            </ul>
+
+            <label>Nome: </label>
+            <input type="text" id="nome8">
+
+            <label>Número da conta: </label>
+            <input type="text" id="conta8">
+
+            <label>Saldo total do semestre (R$): </label>
+            <input type="number" id="saldoSemestre">
+
+            <button id="calcular8">Calcular tarifa</button>
+            <p id="resultado8"></p>
+        </section>
+
+
+    </div>
+</body>
+    <script src="assets/js/exercicio1.js"></script>
+    <script src="assets/js/exercicio2.js"></script>
+    <script src="assets/js/exercicio3.js"></script>
+    <script src="assets/js/exercicio4.js"></script>
+    <script src="assets/js/exercicio5.js"></script>
+    <script src="assets/js/exercicio6.js"></script>
+    <script src="assets/js/exercicio7.js"></script>
+    <script src="assets/js/exercicio8.js"></script>
+</html>

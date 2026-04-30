@@ -1,0 +1,29 @@
+.cracha {
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    margin: 20px auto;
+    text-align: center;
+  }
+
+  .cracha img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #eee;
+  }
+
+  .cracha p {
+    margin: 8px 0;
+    font-size: 14px;
+    color: #333;
+  }
+
+  .cracha p:first-of-type {
+    font-weight: bold;
+    font-size: 16px;
+  }
+

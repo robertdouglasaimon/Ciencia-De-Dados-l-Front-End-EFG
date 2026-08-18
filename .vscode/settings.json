@@ -19,5 +19,6 @@
             "database": "${workspaceFolder:Ciencia-De-Dados-EFG}/dados.db",
             "name": "dados"
         }
-    ]
+    ],
+    "liveServer.settings.port": 5501
 }

@@ -1,0 +1,35 @@
+/* style.css */
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+
+h1 {
+  color: #e63946;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 8px;
+  margin-right: 10px;
+}
+
+button {
+  padding: 8px 12px;
+  background-color: #457b9d;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button.remover {
+  background-color: #e63946;
+}
+
+.complete {
+  text-decoration: line-through;
+  color: gray;
+}

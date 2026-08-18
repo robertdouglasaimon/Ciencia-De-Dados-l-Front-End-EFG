@@ -1,6 +1,14 @@
-// app.js
-const API_URL = "http://localhost:3000/api/orders"; // depois troca pelo link do Render
+// Fiz um fallback de leve para quando não tiver uma disponivel, usar a outra :)
+function getApiUrl() {
+  const local = "http://localhost:3000/api/orders";
+  const render = "https://ciencia-de-dados-l-front-end-efg.onrender.com/api/orders";
+  return window.location.hostname === "localhost" ? local : render;
+}
 
+const API_URL = getApiUrl();
+
+
+// Selecionando elementos do DOM
 const form = document.getElementById("form-pedido");
 const input = document.getElementById("input-pedido");
 const lista = document.getElementById("lista-pedidos");

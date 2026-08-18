@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  },
+  "name": "food-delivery-efg-2026",
+  "version": "1.0.0",
+  "description": "Food Delivery API - Curso Desenvolvimento Web e Mobile (Arquitetura de Sistemas Back End)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": ["express", "node", "food-delivery", "backend", "strategy"],
+  "author": "Robert Douglas",
+  "license": "ISC",
+  "type": "commonjs"
+}

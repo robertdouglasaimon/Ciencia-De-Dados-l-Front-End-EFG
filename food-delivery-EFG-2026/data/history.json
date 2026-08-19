@@ -4,5 +4,11 @@
     "tipo": "CRIADO",
     "titulo": "Churrasco",
     "complete": false
+  },
+  {
+    "timestamp": "2026-08-19T14:14:24.910Z",
+    "tipo": "CRIADO",
+    "titulo": "Carne Assada",
+    "complete": false
   }
 ]

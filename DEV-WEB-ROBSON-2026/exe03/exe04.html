@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 03 - Arquivo HTML 4 (Eventos e Interatividade)</title>
+</head>
+<body>
+    <h1 id="titulo-principal">Exercicio 03 - Arquivo 4 (Eventos e Interatividade)</h1>
+
+<!--Exercicio 01
+    **Tarefas:**
+    1.  Criar um contador que inicia em 0
+    2.  A cada clique, aumentar o contador em 1
+    3.  Atualizar o texto do botão com o valor atual
+    4.  Quando atingir 10 cliques, mudar a cor do botão
+    5.  Quando atingir 20 cliques, mostrar um alerta
+
+    ** Dicas:**
+    * Use `addEventListener('click', function)`
+    * Mantenha o contador em uma variável global
+    * Use `textContent` para atualizar o texto
+
+    ** Resultado Esperado:**
+    * Botão que conta cliques e muda aparência conforme progresso
+------------------------------------------------------------------------------------------------------->
+    <hr>
+    
+    <h2>1. Contador de Cliques</h2>
+    <button id="contador">Cliques: 0</button>
+
+    <script>
+        let contador = 0;
+        const botao = document.getElementById('contador');
+
+        botao.addEventListener('click', function() {
+        contador++;
+        botao.textContent = "Cliques: " + contador;
+
+        if (contador === 10) {
+            botao.style.backgroundColor = "lightblue";
+        }
+        if (contador === 20) {
+            alert("Você chegou a 20 cliques!");
+        }
+    });
+    </script>
+    <hr>
+<!----------------------------------------------------------------------------------------------------->
+
+
+<!----------------------------------------------------------------------------------------------------->
+<!-- Exercicio 02
+    **Tarefas:**
+    1.  Escutar o evento `keypress` no input
+    2.  Verificar se a tecla pressionada foi Enter (`event.key === 'Enter'`)
+    3.  Capturar o valor do input
+    4.  Exibir o texto na div resultado
+    5.  Limpar o input após capturar
+
+    ** Dicas:**
+    * Use `event.key` para identificar a tecla
+    * Valide se o input não está vazio
+    * Use `value` para pegar o conteúdo do input
+
+    ** Resultado Esperado:**
+    * Input que responde ao Enter e exibe o texto digitado
+------------------------------------------------------------------------------------------------------>
+<h2>2. Input com Enter</h2>
+
+<input type="text" id="textoInput" placeholder="Digite e pressione Enter">
+<div id="resultado" style="margin-top: 10px;"></div>
+
+<script>
+    const input = document.getElementById('textoInput');
+    const resultado = document.getElementById('resultado');
+
+    input.addEventListener('keypress', function(event) {
+    if (event.key === 'Enter' && input.value.trim() !== "") {
+        resultado.textContent = input.value;
+        input.value = "";
+    }
+    });
+</script>
+<hr>
+<!----------------------------------------------------------------------------------------------------->
+
+<!----------------------------------------------------------------------------------------------------->
+<!-- Exercicio 03
+    **Tarefas:**
+    1.  Prevenir o envio padrão do formulário (`preventDefault`)
+    2.  Validar se o nome tem pelo menos 3 caracteres
+    3.  Validar se o email contém @ e .
+    4.  Exibir mensagem de erro ou sucesso
+    5.  Mudar a cor dos campos inválidos
+
+    ** Dicas:**
+    * Use `event.preventDefault()` no submit
+    * Crie funções separadas para cada validação
+    * Use classes CSS para indicar erro/sucesso
+
+    ** Resultado Esperado:**
+    * Formulário que valida dados e exibe feedback visual
+------------------------------------------------------------------------------------------------------>
+<hr>
+<h2>3. Validação de Formulário</h2>
+<form id="meuFormulario">
+  <input type="text" id="nome" placeholder="Nome (mínimo 3 caracteres)">
+  <input type="email" id="email" placeholder="Email">
+  <button type="submit">Enviar</button>
+</form>
+<div id="mensagens"></div>
+
+<script>
+const formulario = document.getElementById('meuFormulario');
+const mensagens = document.getElementById('mensagens');
+
+formulario.addEventListener('submit', function(event) {
+  event.preventDefault();
+  let nome = document.getElementById('nome');
+  let email = document.getElementById('email');
+  let valido = true;
+  mensagens.textContent = "";
+
+// Validando o nome primeiro
+  if (nome.value.length < 3) {
+    valido = false;
+    nome.style.borderColor = "red";
+    mensagens.textContent += "Nome inválido. ";
+  } else {
+    nome.style.borderColor = "green";
+  }
+
+// Depois validamos o email
+  if (!email.value.includes("@") || !email.value.includes(".")) {
+    valido = false;
+    email.style.borderColor = "red";
+    mensagens.textContent += "Email inválido.";
+  } else {
+    email.style.borderColor = "green";
+  }
+
+// E por fim, se tudo tiver certinho, nós jogamos lá na div a mensagem de sucesso, o paranauê foi feito corretamente :D
+  if (valido) {
+    mensagens.textContent = "Formulário enviado com sucesso!";
+  }
+});
+</script>
+<hr>
+<!----------------------------------------------------------------------------------------------------->
+
+
+<!----------------------------------------------------------------------------------------------------->
+<!-- Exercicio 04
+    **Tarefas:**
+    1.  Adicionar evento `mouseenter` para mudar cor de fundo
+    2.  Adicionar evento `mouseleave` para voltar cor original
+    3.  Criar efeito suave com transições CSS
+    4.  Adicionar evento `click` para mudança permanente
+    5.  Mostrar coordenadas do mouse no elemento
+
+    ** Dicas:**
+    * Use `style.backgroundColor` para mudar cores
+    * Combine JavaScript com transições CSS
+    * Use `event.clientX` e `event.clientY` para coordenadas
+
+    ** Resultado Esperado:**
+    * Elemento que reage ao mouse com efeitos visuais
+------------------------------------------------------------------------------------------------------>
+<hr>
+<h2>4. Efeito com Mouse</h2>
+<div class="caixa" style="width:200px;height:100px;border:1px solid black;transition:0.3s;">
+  Passe o mouse aqui
+</div>
+<div id="coordenadas"></div>
+
+<script>
+    const caixa = document.querySelector('.caixa');
+    const coordenadas = document.getElementById('coordenadas');
+    caixa.addEventListener('mouseenter', function() {
+    caixa.style.backgroundColor = "yellow";
+    });
+
+    // O role aqui é simples: Quando o mouse entra na caixa, a cor dela muda para amarelo. E lá embaixo, mostramos as coordenadas do mouse em tempo real (Usei isso no finado libacess, mas para outra finalidade. Só que a ideia é parecida).
+    
+    // Quando mouse sai da caixa a cor voltar ao normal e ficar tudo branco denovo.
+    caixa.addEventListener('mouseleave', function() {
+    caixa.style.backgroundColor = "";
+    });
+    
+    // Quando clicar na caixa, a cor muda para laranja e fica assim pelo menos até recarregar a página ou tirar o mouse de cima.
+    caixa.addEventListener('click', function() {
+    caixa.style.backgroundColor = "orange";
+    });
+
+    // Quando o mouse se move dentro da caixa, mostra as coordenadas X e Y do mouse em tempo real lá embaixo.
+    caixa.addEventListener('mousemove', function(event) {
+    coordenadas.textContent = "X: " + event.clientX + " Y: " + event.clientY;
+    });
+</script>
+<hr>
+<!----------------------------------------------------------------------------------------------------->
+
+<!----------------------------------------------------------------------------------------------------->
+<!-- Exercicio 05
+    **Tarefas:**
+    1.  Criar função que adiciona novos itens à lista
+    2.  Usar **event delegation** para remover itens
+    3.  Adicionar botão "X" em cada item para remoção
+    4.  Implementar confirmação antes de remover
+    5.  Adicionar animação de remoção
+
+    ** Dicas:**
+    * Use event delegation no elemento pai (`ul`)
+    * Verifique `event.target` para identificar o botão clicado
+    * Use `closest()` para encontrar o item pai
+
+    ** Resultado Esperado:**
+    * Lista funcional com adição/remoção dinâmica de itens
+------------------------------------------------------------------------------------------------------>
+<hr>
+<h2>5. Lista Dinâmica com Adição e Remoção</h2>
+<button id="adicionarItem">Adicionar Item</button>
+<ul id="lista"></ul>
+
+<script>
+    const botaoAdd = document.getElementById('adicionarItem');
+    const lista = document.getElementById('lista');
+    let contando = 1;
+
+    botaoAdd.addEventListener('click', function() {
+    const li = document.createElement('li');
+    li.textContent = "Item " + contando + " ";
+    contando++;
+
+    const btnRemover = document.createElement('button');
+    btnRemover.textContent = "X";
+    li.appendChild(btnRemover);
+
+    lista.appendChild(li);
+    });
+
+    lista.addEventListener('click', function(event) {
+    if (event.target.tagName === 'BUTTON') {
+        const confirmar = confirm("Deseja remover este item?");
+        if (confirmar) {
+        const li = event.target.closest('li');
+        li.remove();
+        }
+    }
+    });
+</script>
+<hr>
+<!----------------------------------------------------------------------------------------------------->
+
+<!----------------------------------------------------------------------------------------------------->
+<!-- Exercicio 06
+    **Tarefas:**
+    1.  Usar setas ↑↓ para navegar entre itens
+    2.  Destacar item ativo visualmente
+    3.  Enter para "selecionar" item atual
+    4.  Escape para limpar seleção
+    5.  Tab para sair do menu
+
+    ** Dicas:**
+    * Mantenha índice do item atual em variável
+    * Use `event.key` para identificar teclas especiais
+    * Adicione classe CSS para item ativo
+
+    ** Resultado Esperado:**
+    * Menu navegável inteiramente pelo teclado
+------------------------------------------------------------------------------------------------------>
+<hr>
+<h2>6. Menu Navegável pelo Teclado</h2>
+<ul id="menuNavegavel">
+  <li tabindex="0">Item 1</li>
+  <li tabindex="0">Item 2</li>
+  <li tabindex="0">Item 3</li>
+  <li tabindex="0">Item 4</li>
+  <li tabindex="0">Item 5</li>
+</ul>
+
+<script>
+    const menuNavegavel = document.getElementById('menuNavegavel');
+    let itemAtivo = 0;
+
+    menuNavegavel.addEventListener('keydown', function(event) {
+    if (event.key === 'ArrowUp') {
+        itemAtivo -= 1;
+    } else if (event.key === 'ArrowDown') {
+        itemAtivo += 1;
+    } else if (event.key === 'Enter') {
+        const item = menuNavegavel.children[itemAtivo];
+        item.classList.add('ativo');
+    } else if (event.key === 'Escape') {
+        const item = menuNavegavel.children[itemAtivo];
+        item.classList.remove('ativo');
+    } else if (event.key === 'Tab') {
+        menuNavegavel.focus();
+    }
+    });
+</script>
+<hr>
+<!-----------------------------------------------------------------------------------------------------> 
+
+<!----------------------------------------------------------------------------------------------------->  
+<!-- Exercicio 07
+    **Tarefas:**
+    1.  Validar usuário em tempo real (evento `input`)
+    2.  Verificar força da senha conforme digitação
+    3.  Comparar senhas em tempo real
+    4.  Mostrar indicadores visuais de validação
+    5.  Habilitar botão submit apenas quando tudo válido
+
+    ** Dicas:**
+    * Use diferentes eventos: `input`,  `blur`,  `focus`
+    * Crie indicadores visuais (ícones, cores)
+    * Desabilite submit até formulário estar válido
+
+    ** Resultado Esperado:**
+    * Formulário com feedback instantâneo e intuitivo
+------------------------------------------------------------------------------------------------------>
+<hr>
+<h2>7. Formulário com Validação em Tempo Real</h2>
+<form id="formCompleto">
+  <input type="text" id="usuario" placeholder="Usuário">
+  <input type="password" id="senha" placeholder="Senha">
+  <input type="password" id="confirmarSenha" placeholder="Confirmar Senha">
+
+  <button type="submit" disabled>Cadastrar</button>
+  <div class="resultado-botao"></div>
+</form>
+
+<script>
+    const usuario = document.getElementById('usuario');
+    const senha = document.getElementById('senha');
+    const confirmar = document.getElementById('confirmarSenha');
+    const botao1 = document.querySelector('button');
+    const resultadoBotao = document.querySelector('.resultado-botao');
+    const form = document.getElementById('formCompleto');
+
+    function validar() {
+        let valido = true;
+
+        if (usuario.value.length < 3) {
+            usuario.style.borderColor = "red";
+            valido = false;
+        } else {
+            usuario.style.borderColor = "green";
+        }
+
+        if (senha.value.length < 6) {
+            senha.style.borderColor = "red";
+            valido = false;
+        } else {
+            senha.style.borderColor = "green";
+        }
+
+        if (confirmar.value !== senha.value || confirmar.value === "") {
+            confirmar.style.borderColor = "red";
+            valido = false;
+        } else {
+            confirmar.style.borderColor = "green";
+        }
+
+        botao1.disabled = !valido;
+
+        if (valido) {
+            resultadoBotao.textContent = "Tudo pronto para cadastrar!";
+            resultadoBotao.style.color = "green";
+        } else {
+            resultadoBotao.textContent = "Preencha corretamente os campos.";
+            resultadoBotao.style.color = "red";
+        }
+    }
+    usuario.addEventListener('input', validar);
+    senha.addEventListener('input', validar);
+    confirmar.addEventListener('input', validar);
+
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();
+        if (!botao1.disabled) {
+            resultadoBotao.textContent = "Cadastro realizado com sucesso!";
+            resultadoBotao.style.color = "blue";
+        }
+    });
+</script>
+<hr>
+<!----------------------------------------------------------------------------------------------------->
+
+<!----------------------------------------------------------------------------------------------------->
+<!-- Exercicio 08
+    **Tarefas:**
+    1. Implementar clique nas abas para mudança de conteúdo
+    2. Usar `data-*` attributes para identificar abas
+    3. Adicionar/remover classes ativas
+    4. Implementar navegação por teclado (setas)
+    5. Adicionar animação de transição
+
+    **Dicas:**
+    * Use `dataset` para acessar data attributes
+    * Remova classe ativa de todos antes de adicionar ao atual
+    * Combine com CSS para animações
+
+    **Resultado Esperado:**
+    * Sistema de abas funcional com navegação por mouse e teclado
+----------------------------------------------------------------------------------------------------->
+<hr>
+<h2>8. Sistema de Abas (Tabs)</h2>
+<div class="tabs">
+  <div class="tab-button active" data-tab="tab1">Aba 1</div>
+  <div class="tab-button" data-tab="tab2">Aba 2</div>
+  <div class="tab-button" data-tab="tab3">Aba 3</div>
+</div>
+<div class="tab-content">
+  <div id="tab1" class="tab-panel active">Conteúdo da Aba 1</div>
+  <div id="tab2" class="tab-panel">Conteúdo da Aba 2</div>
+  <div id="tab3" class="tab-panel">Conteúdo da Aba 3</div>
+</div>
+
+<script>
+const botoes = document.querySelectorAll('.tab-button');
+const paineis = document.querySelectorAll('.tab-panel');
+let indiceTab = 0;
+
+function ativarTab(indice) {
+  botoes.forEach(btn => btn.classList.remove('active'));
+  paineis.forEach(p => p.classList.remove('active'));
+  botoes[indice].classList.add('active');
+  paineis[indice].classList.add('active');
+}
+
+botoes.forEach((btn, i) => {
+  btn.addEventListener('click', function() {
+    ativarTab(i);
+    indiceTab = i;
+  });
+});
+
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'ArrowRight') {
+    indiceTab = (indiceTab + 1) % botoes.length;
+    ativarTab(indiceTab);
+  } else if (event.key === 'ArrowLeft') {
+    indiceTab = (indiceTab - 1 + botoes.length) % botoes.length;
+    ativarTab(indiceTab);
+  }
+});
+</script>
+
+<style>
+.tab-button.active { background-color: lightblue; }
+.tab-panel { display: none; transition: opacity 0.3s; }
+.tab-panel.active { display: block; opacity: 1; }
+</style>
+<hr>
+<!----------------------------------------------------------------------------------------------------->
+
+<!----------------------------------------------------------------------------------------------------->
+<!-- Exercicio 09
+    **Tarefas:**
+    1. Criar função de debounce personalizada
+    2. Aplicar debounce na busca (delay de 300ms)
+    3. Simular chamada para API/base de dados
+    4. Mostrar indicador de carregamento
+    5. Cancelar busca anterior se nova busca iniciar
+
+    **Dicas:**
+    * Função debounce: `clearTimeout` + `setTimeout`
+    * Use `setTimeout` para simular delay de API
+    * Implemente loading spinner
+
+    **Resultado Esperado:**
+    * Sistema de busca otimizado que não faz requisições excessivas
+----------------------------------------------------------------------------------------------------->
+<hr>
+<h2>9. Sistema de Busca com Debounce</h2>
+<input type="text" id="buscaAvancada" placeholder="Buscar...">
+<div id="resultadosBusca"></div>
+
+<script>
+    const busca = document.getElementById('buscaAvancada');
+    const resultados = document.getElementById('resultadosBusca');
+    let timeout;
+
+    function buscarObjetos(texto) {
+    return objetos.filter(objeto => objeto.nome.toLowerCase().includes(texto.toLowerCase()));
+    }
+
+    function simularBusca(texto) {
+    resultados.textContent = "Buscando por: " + texto + "...";
+    setTimeout(() => {
+        resultados.textContent = "Resultados para: " + texto;
+    }, 500);
+    }
+
+    busca.addEventListener('input', function() {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+        if (busca.value.trim() !== "") {
+        simularBusca(busca.value);
+        }
+    }, 300);
+    });
+</script>
+<hr>
+<!----------------------------------------------------------------------------------------------------->
+
+<!----------------------------------------------------------------------------------------------------->
+<!-- Exercicio 10
+    **Tarefas:**
+    1. Implementar eventos de drag: `dragstart`, `dragend`
+    2. Implementar eventos de drop: `dragover`, `drop`
+    3. Usar `dataTransfer` para passar dados
+    4. Adicionar feedback visual durante o drag
+    5. Permitir reordenação dentro da mesma zona
+
+    **Dicas:**
+    * `preventDefault()` é essencial no `dragover`
+    * Use `dataTransfer.setData()` e `getData()`
+    * Adicione classes CSS para feedback visual
+
+    **Resultado Esperado:**
+    * Sistema completo de drag and drop com feedback visual
+----------------------------------------------------------------------------------------------------->
+<hr>
+<h2>10. Drag and Drop Personalizado</h2>
+<div class="container-drag">
+  <div class="zona-origem">
+    <div class="item-drag" draggable="true">Item 1</div>
+    <div class="item-drag" draggable="true">Item 2</div>
+  </div>
+  <div class="zona-destino">Arraste itens aqui</div>
+</div>
+
+<script>
+const itensDrag = document.querySelectorAll('.item-drag');
+const destino = document.querySelector('.zona-destino');
+
+itensDrag.forEach(item => {
+  item.addEventListener('dragstart', function(event) {
+    event.dataTransfer.setData('text', event.target.textContent);
+    event.target.style.opacity = "0.5";
+  });
+  item.addEventListener('dragend', function(event) {
+    event.target.style.opacity = "1";
+  });
+});
+
+destino.addEventListener('dragover', function(event) {
+  event.preventDefault();
+});
+
+destino.addEventListener('drop', function(event) {
+  event.preventDefault();
+  const texto = event.dataTransfer.getData('text');
+  const novoItem = document.createElement('div');
+  novoItem.textContent = texto;
+  novoItem.classList.add('item-drag');
+  destino.appendChild(novoItem);
+});
+</script>
+
+<style>
+    .item-drag { padding: 5px; border: 1px solid black; margin: 2px; }
+    .zona-destino { min-height: 50px; border: 1px dashed gray; padding: 10px; }
+</style>
+<hr>
+<!----------------------------------------------------------------------------------------------------->
+
+<!----------------------------------------------------------------------------------------------------->
+<!-- Exercicio 11
+    **Tarefas:**
+    1. Criar custom events com `CustomEvent`
+    2. Implementar sistema publisher/subscriber
+    3. Passar dados complexos nos eventos
+    4. Criar múltiplos observadores
+    5. Implementar sistema de prioridades
+
+    **Dicas:**
+    * Use `new CustomEvent()` com `detail` property
+    * `dispatchEvent()` para disparar eventos
+    * `addEventListener()` para escutar custom events
+
+    **Resultado Esperado:**
+    * Sistema flexível de comunicação entre componentes
+----------------------------------------------------------------------------------------------------->
+<hr>
+<h2>11. Custom Events e Observer Pattern</h2>
+<div id="publicador">
+  <button id="btnEvento">Disparar Evento</button>
+</div>
+<div id="observador1">Observador 1: aguardando...</div>
+<div id="observador2">Observador 2: aguardando...</div>
+
+<script>
+    const btnEvento = document.getElementById('btnEvento');
+    const obs1 = document.getElementById('observador1');
+    const obs2 = document.getElementById('observador2');
+
+    document.addEventListener('meuEvento', function(event) {
+    obs1.textContent = "Observador 1 recebeu: " + event.detail;
+    });
+
+    document.addEventListener('meuEvento', function(event) {
+    obs2.textContent = "Observador 2 recebeu: " + event.detail;
+    });
+
+    btnEvento.addEventListener('click', function() {
+    const evento = new CustomEvent('meuEvento', { detail: "Dados enviados!" });
+    document.dispatchEvent(evento);
+    });
+</script>
+<hr>
+<!----------------------------------------------------------------------------------------------------->
+
+
+
+
+
+
+</body>
+</html>

@@ -15,7 +15,11 @@ const app = express();
 app.use(json());
 app.use(cors());
 
-// Alternância de logger
+// Log no padrão Strategy (mais adequado para esse tipo de cenário):
+// const loggerType = process.env.LOGGER || "json";
+// const logger = loggerType === "console" ? new ConsoleLogger() : new JsonLogger();
+
+// Alternância de logger (com os 3 loggers funcionando, cada um com sua característica):
 const loggerType = process.env.LOGGER || "console";
 let logger;
 
@@ -26,6 +30,13 @@ if (loggerType === "console") {
 } else if (loggerType === "render") {
   logger = new RenderLogger();
 }
+// Não era pra ter feito usando if, eu sei. Mas como eu pensei em mostrar os 3 loggs, achei melhor assim. Se fosse só um, eu teria feito usando o padrão Strategy, que é mais adequado para esse tipo de cenário.
+// Ai é aquela pô, se você levar em conta o online no render, ele ta no padrão Strategy, mas se você levar em conta o local, ele ta no padrão if/else. Então é meio que um mix dos dois padrões. Mas enfim, o importante é que funciona e que a gente consegue ver os 3 loggers funcionando, cada um com sua característica.
+
+
+
+
+
 
 // Injeção de dependências
 const service = new OrderService(logger);

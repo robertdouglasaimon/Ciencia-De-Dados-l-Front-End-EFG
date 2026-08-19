@@ -1,21 +1,28 @@
 // Etapa 3: Criar o JsonLogger
 // Esse salva os eventos em um arquivo history.json, vai ficar lá na pasta data
+import fs from "fs";
+import path from "path";
+import { fileURLToPath } from "url";
 
-const Logger = require("./Logger");
-const fs = require("fs");
-const path = require("path");
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-const ARQUIVO = path.join(__dirname, "../data/history.json");
-
-class JsonLogger extends Logger {
+export default class JsonLogger {
   registrar(evento) {
-    let historico = [];
-    if (fs.existsSync(ARQUIVO)) {
-      historico = JSON.parse(fs.readFileSync(ARQUIVO, "utf-8"));
+    const filePath = path.join(__dirname, "../data/history.json");
+    const logEntry = { timestamp: new Date().toISOString(), ...evento };
+
+    let logs = [];
+    if (fs.existsSync(filePath)) {
+      try {
+        logs = JSON.parse(fs.readFileSync(filePath, "utf-8"));
+      } catch {
+        logs = [];
+      }
     }
-    historico.push({ ...evento, data: new Date().toISOString() });
-    fs.writeFileSync(ARQUIVO, JSON.stringify(historico, null, 2));
+
+    logs.push(logEntry);
+    fs.writeFileSync(filePath, JSON.stringify(logs, null, 2));
+    console.log(`[JSON LOG] Evento registrado em history.json: ${evento.tipo} - "${evento.titulo}"`);
   }
 }
-
-module.exports = JsonLogger;

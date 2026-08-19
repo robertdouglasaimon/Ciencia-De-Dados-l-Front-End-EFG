@@ -1,6 +1,6 @@
 // ETAPA 2 - Criar o ConsoleLogger
 // Esse imprime no console no formato pedido.
-const Logger = require("./Logger");
+import Logger from "./Logger.js";
 
 class ConsoleLogger extends Logger {
   registrar(evento) {
@@ -9,4 +9,4 @@ class ConsoleLogger extends Logger {
   }
 }
 
-module.exports = ConsoleLogger;
+export default ConsoleLogger;

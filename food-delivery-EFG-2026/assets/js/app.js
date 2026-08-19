@@ -1,6 +1,7 @@
 // app.js
 const API_URL = "http://localhost:3000/api/orders"; // depois troca pelo link do Render
 
+
 const form = document.getElementById("form-pedido");
 const input = document.getElementById("input-pedido");
 const lista = document.getElementById("lista-pedidos");

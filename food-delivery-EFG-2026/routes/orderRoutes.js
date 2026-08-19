@@ -1,9 +1,8 @@
 // Etapa 8: Criar as rotas
-// routes/orderRoutes.js
-const express = require("express");
-const router = express.Router();
+import { Router } from "express";
+const router = Router();
 
-module.exports = (controller) => {
+export default (controller) => {
   router.get("/", (req, res) => controller.listar(req, res));
   router.post("/", (req, res) => controller.criar(req, res));
   router.patch("/:id", (req, res) => controller.alterar(req, res));

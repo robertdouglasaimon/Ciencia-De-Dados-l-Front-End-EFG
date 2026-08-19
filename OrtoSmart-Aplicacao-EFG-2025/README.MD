@@ -178,7 +178,7 @@ O projeto foi desenvolvido com uma stack leve e eficiente, ideal para aplicaçõ
 
 ## Is that all folks! 
 “Não sei como, mas funcionou.” 💻🔥🧠🕺 <br>
-Desenvolvido por <a href="https://r-douglas.vercel.app">Robert Douglas</a> <br>
+Desenvolvido por <a href="https://r-douglas.vercel.app">Robert Douglas</a> <br><br>
 ![Missão Cumprida!](./src/img/mission-complete.gif) <br>
 <audio controls>
   <source src="./src/sound/Metal Slug - Mission Complete!.MP3" type="audio/mpeg">

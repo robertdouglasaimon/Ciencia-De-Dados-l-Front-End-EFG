@@ -1,7 +1,7 @@
 // Etapa 6: Criar o OrderService
 // Aqui ficam as regras de negócio (criar, alterar, remover pedidos).
 
-const Order = require("../models/Order");
+import Order from "../models/Order.js";
 
 class OrderService {
   constructor(logger) {
@@ -17,9 +17,14 @@ class OrderService {
   criar(titulo) {
     const novo = new Order(this.proximoId++, titulo);
     this.pedidos.push(novo);
-    this.logger.registrar({ tipo: "CRIADO", titulo: novo.titulo, complete: novo.complete });
+    this.logger.registrar({ 
+      tipo: "CRIADO", 
+      titulo: novo.titulo, 
+      complete: novo.complete 
+    });
     return novo;
   }
+
 
   alterar(id) {
     const pedido = this.pedidos.find((p) => p.id === Number(id));
@@ -38,4 +43,4 @@ class OrderService {
   }
 }
 
-module.exports = OrderService;
+export default OrderService;

@@ -14,5 +14,5 @@
   "keywords": ["express", "node", "food-delivery", "backend", "strategy"],
   "author": "Robert Douglas",
   "license": "ISC",
-  "type": "commonjs"
+  "type": "module"
 }

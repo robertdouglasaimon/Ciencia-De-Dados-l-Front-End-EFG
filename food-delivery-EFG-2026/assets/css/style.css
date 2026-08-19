@@ -1,35 +1,119 @@
-/* style.css */
-body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f8f9fa;
+  color: #333;
+  padding: 20px;
+}
+
+/* Cabeçalho */
 h1 {
+  text-align: center;
+  margin-bottom: 20px;
   color: #e63946;
 }
 
+/* Formulário */
 form {
-  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
 }
 
 input {
-  padding: 8px;
+  flex: 1;
+  padding: 10px;
+  border: 2px solid #457b9d;
+  border-radius: 4px;
   margin-right: 10px;
 }
 
 button {
-  padding: 8px 12px;
+  padding: 10px 16px;
   background-color: #457b9d;
   color: white;
   border: none;
+  border-radius: 4px;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #1d3557;
 }
 
 button.remover {
   background-color: #e63946;
 }
 
+button.remover:hover {
+  background-color: #a4161a;
+}
+
+/* Lista de pedidos */
+ul {
+  list-style: none;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+li span {
+  flex: 1;
+  margin: 0 10px;
+}
+
 .complete {
   text-decoration: line-through;
   color: gray;
+}
+
+/* Contador */
+#contador {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #1d3557;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  input {
+    margin: 0 0 10px 0;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  li button {
+    margin-top: 10px;
+    width: 100%;
+  }
 }

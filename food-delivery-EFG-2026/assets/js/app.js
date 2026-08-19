@@ -8,6 +8,7 @@ function getApiUrl() {
 const API_URL = getApiUrl();
 
 
+
 // Selecionando elementos do DOM
 const form = document.getElementById("form-pedido");
 const input = document.getElementById("input-pedido");

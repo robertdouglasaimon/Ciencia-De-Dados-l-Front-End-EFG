@@ -2,21 +2,30 @@
 // No server.js, vamos escolher qual logger usar (console ou JSON).
 
 // server.js
-const express = require("express");
-const cors = require("cors");
-const ConsoleLogger = require("./loggers/ConsoleLogger");
-const JsonLogger = require("./loggers/JsonLogger");
-const OrderService = require("./services/OrderService");
-const OrderController = require("./controllers/OrderController");
-const orderRoutes = require("./routes/orderRoutes");
+import express, { json } from "express";
+import cors from "cors";
+import ConsoleLogger from "./loggers/ConsoleLogger.js";
+import JsonLogger from "./loggers/JsonLogger.js";
+import RenderLogger from "./loggers/RenderLogger.js";
+import OrderService from "./services/OrderService.js";
+import OrderController from "./controllers/OrderController.js";
+import orderRoutes from "./routes/orderRoutes.js";
 
 const app = express();
-app.use(express.json());
+app.use(json());
 app.use(cors());
 
 // Alternância de logger
-const loggerType = process.env.LOGGER || "json";
-const logger = loggerType === "console" ? new ConsoleLogger() : new JsonLogger();
+const loggerType = process.env.LOGGER || "console";
+let logger;
+
+if (loggerType === "console") {
+  logger = new ConsoleLogger();
+} else if (loggerType === "json") {
+  logger = new JsonLogger();
+} else if (loggerType === "render") {
+  logger = new RenderLogger();
+}
 
 // Injeção de dependências
 const service = new OrderService(logger);
